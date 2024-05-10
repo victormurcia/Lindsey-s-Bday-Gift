@@ -223,6 +223,17 @@ def echo_chamber_puzzle():
                     Happy Birthday my Mooncakes!! I love you alotl lotl axolotl!! <3
                 </h1>
                 """, unsafe_allow_html=True)
+            
+            # Assuming you have the paths to your images
+            image_paths = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg']
+            captions = ["Image 1", "Image 2", "Image 3", "Image 4", "Image 5"]
+            
+            # Create a row of columns
+            cols = st.columns(5)
+            for col, img_path, caption in zip(cols, image_paths, captions):
+                with col:
+                    st.image(img_path, caption=caption, use_column_width=True)
+
     else:
         st.info("Keep arranging the symbols to create the correct melody.")
         
