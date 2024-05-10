@@ -225,7 +225,7 @@ def echo_chamber_puzzle():
                 """, unsafe_allow_html=True)
             
             # Assuming you have the paths to your images
-            image_paths = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg']
+            image_paths = ['image1.webp', 'image2.webp', 'image3.webp', 'image4.webp', 'image5.webp']
             captions = ["Image 1", "Image 2", "Image 3", "Image 4", "Image 5"]
             
             # Create a row of columns
