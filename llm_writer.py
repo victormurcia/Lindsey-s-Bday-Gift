@@ -10,6 +10,17 @@ import numpy as np
 from scipy.io.wavfile import write
 import os
 
+notes = {
+        "C4": 261.63, "Db4": 277.18, "D4": 293.66, "Eb4": 311.13,
+        "E4": 329.63, "F4": 349.23, "Gb4": 369.99, "G4": 392.00,
+        "Ab4": 415.30, "A4": 440.00, "Bb4": 466.16, "B4": 493.88,
+        "C5": 523.25
+    }
+
+create_audio_files(notes)  # Initialize audio files only once
+
+note_keys = list(notes.keys())
+
 def sanitize_filename(name):
     return name.replace("#", "Sharp").replace("b", "Flat")
         
@@ -32,16 +43,6 @@ def create_audio_files(notes):
         write(f"{directory}/{filename}.wav", sample_rate, data)
         
 def main_menu():
-    notes = {
-        "C4": 261.63, "Db4": 277.18, "D4": 293.66, "Eb4": 311.13,
-        "E4": 329.63, "F4": 349.23, "Gb4": 369.99, "G4": 392.00,
-        "Ab4": 415.30, "A4": 440.00, "Bb4": 466.16, "B4": 493.88,
-        "C5": 523.25
-    }
-
-    create_audio_files(notes)  # Initialize audio files only once
-
-    note_keys = list(notes.keys())
     
     st.subheader("Choose your adventure:")
     col1, col2, col3 = st.columns(3)
@@ -96,6 +97,7 @@ def maze_choices():
             st.write("While navigating through the maze, Victor and Lindsey encounter a mystical guardian spirit that challenges them to a musical duel. They must perform a melody that resonates with the spirit's song to proceed further into the maze. If they succeed, the spirit reveals a secret passage that leads them closer to the Heart of Harmony.")
             st.image("1-2-2.webp", caption='The Guardian Spirit')
             st.write("With hearts pounding in rhythm, they raise their voices and instruments, blending their melodies with the spirit's song. Each note they play weaves seamlessly into the tapestry of sound, creating a harmonious symphony that reverberates through the maze.")
+            
             st.write("Select a note to play:")
             for note in note_keys:
                 if st.button(note):
@@ -104,6 +106,7 @@ def maze_choices():
             st.write("As Victor and Lindsey progress deeper into the maze, they become disoriented by the echoing sounds of the forest. They find themselves trapped in an echo chamber where every sound is distorted. To escape, they must rely on their intuition and teamwork to decipher the true musical hints amidst the cacophony. If they succeed, they break free from the chamber and find themselves closer to the Heart of Harmony's location.")
             st.image("1-2-3.webp", caption='The Echo Chamber')
             st.write("With renewed determination, they join hands and focus their minds, allowing their intuition to guide them towards the true source of harmony amidst the chaos. As they do, the echoes begin to fade, replaced by a serene melody that leads them towards the heart of the maze and closer to their ultimate goal: the Heart of Harmony.")
+            
             st.write("Select a note to play:")
             for note in note_keys:
                 if st.button(note):
