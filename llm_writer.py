@@ -118,15 +118,77 @@ def harmony_choices():
             st.write("Along the journey, they encounter a group of mystical creatures known as the Wind Sirens, who test their musical prowess with a series of harmonic trials. They must impress the Sirens with their musical abilities to gain passage to the summit.")
             st.image("3-2-1.webp", caption='The Hidden Cave')
             st.write("As they delve deeper into the temporal puzzle, they come across a branching pathway leading to two diverging timelines. They must choose wisely, as each path holds its own challenges and rewards.")
+            echo_chamber_puzzle()
         elif st.session_state['harmony_choice'] == 'melodic_menace':
             st.write("Victor and Lindsey encounter a malevolent entity known as the Discordant Spirit, whose dissonant melodies disrupt the harmony of the mountain. They must confront the spirit and restore balance to the natural order.")
             st.image("3-2-2.webp", caption='The Guardian Spirit')
             st.write("As they venture deeper into the spatial enigma, they come across a mysterious portal that offers glimpses into alternate dimensions. They must decide whether to explore further or continue on their current path.")
+            echo_chamber_puzzle()
         elif st.session_state['harmony_choice'] == 'quantum_conundrum':
             st.write("Victor and Lindsey encounter a wise old sage known as the Melody Master, who imparts ancient wisdom about the power of harmony. They must prove their understanding of rhythm and melody to gain his guidance on their journey.")
             st.image("3-2-2.webp", caption='The Echo Chamber')
             st.write("Inside the library, Victor and Lindsey find a cryptic message written in an ancient language. They must decipher the code to reveal the next clue on their journey.")
+            echo_chamber_puzzle()
+
+def echo_chamber_puzzle():
+    st.write("Arrange the symbols in the correct order to solve the puzzle:")
+
+    # Define the symbols for the puzzle
+    symbols = ["/\\_/\  ", "( o.o )", " > ^ < ", " - - -", "//    \\\\"]  # Escaped backslashes
     
+    # Create columns for each symbol
+    col1, col2, col3, col4, col5 = st.columns(5)
+
+    # Create dropdowns for each symbol
+    with col1:
+        symbol_order_1 = st.selectbox("Symbol 1", options=symbols, index=3)
+
+    with col2:
+        symbol_order_2 = st.selectbox("Symbol 2", options=symbols, index=1)
+
+    with col3:
+        symbol_order_3 = st.selectbox("Symbol 3", options=symbols, index=4)
+
+    with col4:
+        symbol_order_4 = st.selectbox("Symbol 4", options=symbols, index=0)
+
+    with col5:
+        symbol_order_5 = st.selectbox("Symbol 5", options=symbols, index=2)
+        
+    # Display the selected symbols using st.text for better formatting
+    drawn_picture = f"   {symbol_order_1}\n{symbol_order_2}\n{symbol_order_3}\n{symbol_order_4}\n{symbol_order_5}"
+    st.code(drawn_picture, language='text')  # Using st.code to maintain formatting
+   
+    
+    # Check if the user has arranged the symbols correctly
+    if [symbol_order_1, symbol_order_2, symbol_order_3, symbol_order_4, symbol_order_5] == symbols:
+        st.success("Congratulations! You've solved the puzzle and harmonized with the natural rhythms of the mountain.")
+        # Create columns to display the image three times
+        col1, col2, col3,col4 = st.columns(4)
+        with col1:
+            st.code(drawn_picture, language='text')
+        with col2:
+            st.code(drawn_picture, language='text')
+        with col3:
+            st.code(drawn_picture, language='text')
+        with col4:
+            st.code(drawn_picture, language='text')
+        
+        # Add descriptive text leading to the Heart of Harmony
+        st.subheader("The Path to the Heart of Harmony")
+        st.write("With the symbols aligned, a melodious hum fills the air, leading Lindsey and Victor deeper into the mountain's core. "
+                 "Step by step, the path unfolds, guided by the pulse of harmony. They make their way to fabled Heart of Harmony. What secret will it reveal?")
+        # Button to show a GIF
+        if st.button('Discover the Heart of Harmony'):
+            # Assuming you have a local path to a GIF file
+            gif_path = 'prize1.gif'
+            st.image(gif_path, caption='The Heart of Harmony')
+            audio_file = open('bless_the_telephone.mp3', 'rb')
+            audio_bytes = audio_file.read()
+            st.audio(audio_bytes)
+    else:
+        st.info("Keep arranging the symbols to create the correct melody.")
+        
 if __name__ == '__main__':
     
     # Display the main image
