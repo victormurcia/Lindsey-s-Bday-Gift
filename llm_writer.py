@@ -234,6 +234,8 @@ def echo_chamber_puzzle():
                 </h1>
                 """, unsafe_allow_html=True)
             
+            image_paths = ['image6.webp', 'image7.webp', 'image8.webp', 'image9.webp', 'image10.webp']
+            captions = ["I", "love", "you", "my", "Mooncakes!!!"]
             # Create a row of columns
             cols = st.columns(5)
             for col, img_path, caption in zip(cols, image_paths, captions):
