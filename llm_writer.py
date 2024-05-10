@@ -219,7 +219,7 @@ def echo_chamber_puzzle():
             st.audio(audio_bytes)
 
             st.markdown("""
-                <h1 style='color: magenta; font-size: 50px; font-family: Arial, Helvetica, sans-serif; text-align: center;'>
+                <h1 style='color: #046307; font-size: 50px; font-family: Arial, Helvetica, sans-serif; text-align: center;'>
                     Happy Birthday my Mooncakes!! I love you alotl lotl axolotl!! <3
                 </h1>
                 """, unsafe_allow_html=True)
