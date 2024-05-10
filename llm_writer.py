@@ -78,28 +78,15 @@ def maze_choices():
             st.image("1-2-1.webp", caption='The Hidden Cave')
             st.write("As Victor and Lindsey follow the musical hints, they notice a pattern emerging in the melodies around them, guiding them towards the center of the maze.")
 
-            st.write("Select a note to play:")
-            for note in note_keys:
-                if st.button(note):
-                    st.audio(f"{note}.wav")
         elif st.session_state['maze_choice'] == 'guardian_spirit':
             st.write("While navigating through the maze, Victor and Lindsey encounter a mystical guardian spirit that challenges them to a musical duel. They must perform a melody that resonates with the spirit's song to proceed further into the maze. If they succeed, the spirit reveals a secret passage that leads them closer to the Heart of Harmony.")
             st.image("1-2-2.webp", caption='The Guardian Spirit')
             st.write("With hearts pounding in rhythm, they raise their voices and instruments, blending their melodies with the spirit's song. Each note they play weaves seamlessly into the tapestry of sound, creating a harmonious symphony that reverberates through the maze.")
             
-            st.write("Select a note to play:")
-            for note in note_keys:
-                if st.button(note):
-                    st.audio(f"{note}.wav")
         elif st.session_state['maze_choice'] == 'echo_chamber':
             st.write("As Victor and Lindsey progress deeper into the maze, they become disoriented by the echoing sounds of the forest. They find themselves trapped in an echo chamber where every sound is distorted. To escape, they must rely on their intuition and teamwork to decipher the true musical hints amidst the cacophony. If they succeed, they break free from the chamber and find themselves closer to the Heart of Harmony's location.")
             st.image("1-2-3.webp", caption='The Echo Chamber')
             st.write("With renewed determination, they join hands and focus their minds, allowing their intuition to guide them towards the true source of harmony amidst the chaos. As they do, the echoes begin to fade, replaced by a serene melody that leads them towards the heart of the maze and closer to their ultimate goal: the Heart of Harmony.")
-            
-            st.write("Select a note to play:")
-            for note in note_keys:
-                if st.button(note):
-                    st.audio(f"{note}.wav")
                         
 def narrative_quantum():
     st.write("Choosing the path of scientific curiosity, our duo enters the Quantum Quagmire.")
