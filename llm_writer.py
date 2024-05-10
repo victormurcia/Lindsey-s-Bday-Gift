@@ -217,6 +217,12 @@ def echo_chamber_puzzle():
             audio_file = open('bless_the_telephone.mp3', 'rb')
             audio_bytes = audio_file.read()
             st.audio(audio_bytes)
+
+            st.markdown("""
+                <h1 style='color: magenta; font-size: 50px; font-family: Arial, Helvetica, sans-serif; text-align: center;'>
+                    Happy Birthday my Mooncakes!! I love you alotl lotl axolotl!! <3
+                </h1>
+                """, unsafe_allow_html=True)
     else:
         st.info("Keep arranging the symbols to create the correct melody.")
         
