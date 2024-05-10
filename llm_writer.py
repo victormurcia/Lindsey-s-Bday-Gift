@@ -10,17 +10,6 @@ import numpy as np
 from scipy.io.wavfile import write
 import os
 
-notes = {
-        "C4": 261.63, "Db4": 277.18, "D4": 293.66, "Eb4": 311.13,
-        "E4": 329.63, "F4": 349.23, "Gb4": 369.99, "G4": 392.00,
-        "Ab4": 415.30, "A4": 440.00, "Bb4": 466.16, "B4": 493.88,
-        "C5": 523.25
-    }
-
-create_audio_files(notes)  # Initialize audio files only once
-
-note_keys = list(notes.keys())
-
 def sanitize_filename(name):
     return name.replace("#", "Sharp").replace("b", "Flat")
         
@@ -241,7 +230,16 @@ def echo_chamber_puzzle():
         st.info("Keep arranging the symbols to create the correct melody.")
         
 if __name__ == '__main__':
-    
+        notes = {
+                "C4": 261.63, "Db4": 277.18, "D4": 293.66, "Eb4": 311.13,
+                "E4": 329.63, "F4": 349.23, "Gb4": 369.99, "G4": 392.00,
+                "Ab4": 415.30, "A4": 440.00, "Bb4": 466.16, "B4": 493.88,
+                "C5": 523.25
+        }
+        
+        create_audio_files(notes)  # Initialize audio files only once
+        
+        note_keys = list(notes.keys())
     # Display the main image
     image_path = "1.webp"  # Replace with the path to your image
     st.image(image_path)
