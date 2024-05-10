@@ -77,17 +77,18 @@ def maze_choices():
             st.write("Victor and Lindsey follow the musical hints and successfully navigate through the maze to reach the center. There, they discover a hidden cave adorned with ancient symbols. Inside the cave, they find a riddle that, when solved, reveals a map leading to the Heart of Harmony's location.")
             st.image("1-2-1.webp", caption='The Hidden Cave')
             st.write("As Victor and Lindsey follow the musical hints, they notice a pattern emerging in the melodies around them, guiding them towards the center of the maze.")
-
+            echo_chamber_puzzle()
         elif st.session_state['maze_choice'] == 'guardian_spirit':
             st.write("While navigating through the maze, Victor and Lindsey encounter a mystical guardian spirit that challenges them to a musical duel. They must perform a melody that resonates with the spirit's song to proceed further into the maze. If they succeed, the spirit reveals a secret passage that leads them closer to the Heart of Harmony.")
             st.image("1-2-2.webp", caption='The Guardian Spirit')
             st.write("With hearts pounding in rhythm, they raise their voices and instruments, blending their melodies with the spirit's song. Each note they play weaves seamlessly into the tapestry of sound, creating a harmonious symphony that reverberates through the maze.")
-            
+            echo_chamber_puzzle()
         elif st.session_state['maze_choice'] == 'echo_chamber':
             st.write("As Victor and Lindsey progress deeper into the maze, they become disoriented by the echoing sounds of the forest. They find themselves trapped in an echo chamber where every sound is distorted. To escape, they must rely on their intuition and teamwork to decipher the true musical hints amidst the cacophony. If they succeed, they break free from the chamber and find themselves closer to the Heart of Harmony's location.")
             st.image("1-2-3.webp", caption='The Echo Chamber')
             st.write("With renewed determination, they join hands and focus their minds, allowing their intuition to guide them towards the true source of harmony amidst the chaos. As they do, the echoes begin to fade, replaced by a serene melody that leads them towards the heart of the maze and closer to their ultimate goal: the Heart of Harmony.")
-                        
+            echo_chamber_puzzle()    
+            
 def narrative_quantum():
     st.write("Choosing the path of scientific curiosity, our duo enters the Quantum Quagmire.")
     st.image("2-1-1.webp", caption='The Quantum Quagmire')
@@ -112,14 +113,17 @@ def quantum_choices():
             st.write("Victor and Lindsey encounter a series of temporal anomalies, including time loops and quantum entanglements. They must solve a series of puzzles involving causality and time manipulation to progress further.")
             st.image("2-2-1.webp", caption='The Temporal Puzzle')
             st.write("As they delve deeper into the temporal puzzle, they come across a branching pathway leading to two diverging timelines. They must choose wisely, as each path holds its own challenges and rewards.")
+            echo_chamber_puzzle()
         elif st.session_state['quantum_choice'] == 'spatial_enigma':
             st.write("Victor and Lindsey encounter spatial distortions that defy conventional physics, including non-Euclidean geometry and multidimensional rifts. They must navigate through shifting landscapes and gravitational anomalies to reach their destination.")
             st.image("2-2-2.webp", caption='The Spatial Enigma')
             st.write("As they venture deeper into the spatial enigma, they come across a mysterious portal that offers glimpses into alternate dimensions. They must decide whether to explore further or continue on their current path.")
+            echo_chamber_puzzle()
         elif st.session_state['quantum_choice'] == 'quantum_conundrum':
             st.write("They discover a hidden library filled with ancient texts on quantum mechanics and metaphysics. They must study the arcane knowledge within to uncover the secrets of the Quantum Quagmire and unlock its mysteries.")
             st.image("2-2-3.webp", caption='The Quantum Conundrum')
             st.write("Inside the library, Victor and Lindsey find a cryptic message written in an ancient language. They must decipher the code to reveal the next clue on their journey.")
+            echo_chamber_puzzle()
     
 def narrative_harmony():
     st.write("Opting for a test of courage and endurance, Victor and Lindsey climb the Harmony Heights.")
