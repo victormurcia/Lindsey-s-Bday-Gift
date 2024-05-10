@@ -218,15 +218,21 @@ def echo_chamber_puzzle():
             audio_bytes = audio_file.read()
             st.audio(audio_bytes)
 
+            # Assuming you have the paths to your images
+            image_paths = ['image1.webp', 'image2.webp', 'image3.webp', 'image4.webp', 'image5.webp']
+            captions = ["I", "love", "you", "my", "Mooncakes!!!"]
+
+            # Create a row of columns
+            cols = st.columns(5)
+            for col, img_path, caption in zip(cols, image_paths, captions):
+                with col:
+                    st.image(img_path, caption=caption, use_column_width=True)
+                    
             st.markdown("""
-                <h1 style='color: #046307; font-size: 50px; font-family: Arial, Helvetica, sans-serif; text-align: center;'>
+                <h1 style='color: #491f5d; font-size: 50px; font-family: Arial, Helvetica, sans-serif; text-align: center;'>
                     Happy Birthday my Mooncakes!! I love you alotl lotl axolotl!! <3
                 </h1>
                 """, unsafe_allow_html=True)
-            
-            # Assuming you have the paths to your images
-            image_paths = ['image1.webp', 'image2.webp', 'image3.webp', 'image4.webp', 'image5.webp']
-            captions = ["Image 1", "Image 2", "Image 3", "Image 4", "Image 5"]
             
             # Create a row of columns
             cols = st.columns(5)
