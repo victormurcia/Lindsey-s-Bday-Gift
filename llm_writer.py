@@ -6,7 +6,31 @@ Created on Sun Apr 28 23:58:42 2024
 """
 
 import streamlit as st
+import numpy as np
+from scipy.io.wavfile import write
+import os
 
+def sanitize_filename(name):
+    return name.replace("#", "Sharp").replace("b", "Flat")
+        
+def generate_tone(frequency, duration, sample_rate=44100):
+    t = np.linspace(0, duration, int(sample_rate * duration), False)
+    tone = np.sin(2 * np.pi * frequency * t)
+    return (tone * 32767 / np.max(np.abs(tone))).astype(np.int16)
+
+def create_audio_files(notes):
+    sample_rate = 44100
+    duration = 1  # seconds
+    directory = "audio"  # Specify the directory to save audio files
+
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+    for note, freq in notes.items():
+        filename = sanitize_filename(note)
+        data = generate_tone(freq, duration, sample_rate)
+        write(f"{directory}/{filename}.wav", sample_rate, data)
+        
 def main_menu():
     notes = {
         "C4": 261.63, "Db4": 277.18, "D4": 293.66, "Eb4": 311.13,
